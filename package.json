@@ -1,0 +1,40 @@
+{
+  "name": "template-npm-package",
+  "author": "Kristaps Ragausis",
+  "license": "MIT",
+  "version": "0.0.1",
+  "description": "NPM package template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<user>/<repo>.git"
+  },
+  "homepage": "https://github.com/<user>/<repo>#readme",
+  "bugs": {
+    "url": "https://github.com/<user>/<repo>/issues"
+  },
+  "keywords": [
+    "typescript",
+    "npm",
+    "package"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "release": "turbo build lint test attw && changeset publish",
+    "publish": "npm publish",
+    "lint": "tsc",
+    "attw": "attw --pack",
+    "test": "vitest run",
+    "change": "pnpm changeset"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.6.0",
+    "@changesets/cli": "^2.26.2",
+    "ts-node": "^10.9.1",
+    "tsup": "^7.1.0",
+    "turbo": "^1.10.7",
+    "vitest": "^0.33.0"
+  }
+}
